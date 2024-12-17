@@ -568,9 +568,9 @@ function addAttentionChecks(timeline, attentionCheckTrial) {
       type: jsPsychHtmlKeyboardResponseRaf,
       stimulus: function() {
 
-        var trials_sample_remain = jsPsych.data.get().filter({task: 'response_sample_remain'});
+        var trials_sample_remain = jsPsych.data.get().filter({task: 'memory'});
         var correct_trials_sample_remain = trials_sample_remain.filter({correct: true});
-        var trials_same_time = jsPsych.data.get().filter({task: 'response_same_time'});
+        var trials_same_time = jsPsych.data.get().filter({task: 'perceptual'});
         var correct_trials_same_time = trials_same_time.filter({correct: true});
         var accuracy_sample_remain = Math.round(correct_trials_sample_remain.count() / trials_sample_remain.count() * 100);
         var accuracy_same_time = Math.round(correct_trials_same_time.count() / trials_same_time.count() * 100);
