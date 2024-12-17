@@ -259,7 +259,7 @@
 
     practice2.push(fixation, target_sample, sample_practice)
 
-		function addAttentionChecks(timeline, attentionCheckTrial) {
+function addAttentionChecks(timeline, attentionCheckTrial) {
       const chunkSize = 24;
       const numberOfChunks = 5;
       
@@ -268,8 +268,8 @@
       
       for (chunkIndex = 0; chunkIndex < numberOfChunks; chunkIndex++){
         const start = chunkIndex * chunkSize;
-    		const end = start + chunkSize;
-    		const currentChunk = jsPsych.randomization.shuffle(timeline.slice(start, end));
+    	const end = start + chunkSize;
+    	const currentChunk = jsPsych.randomization.shuffle(timeline.slice(start, end));
 
         newTimeline.push(...currentChunk);
         
@@ -278,7 +278,7 @@
       }
 
       console.log(newTimeline)
-			return newTimeline;
+	return newTimeline;
     };
 
 
