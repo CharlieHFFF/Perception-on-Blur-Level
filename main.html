@@ -185,6 +185,19 @@
       }
     };
 
+    const target_sample_practice = {
+      type: jsPsychHtmlKeyboardResponseRaf,
+      stimulus: function() {
+        var stim = jsPsych.timelineVariable("target") + jsPsych.timelineVariable('sample');
+        return stim
+      },
+      choices: "NO_KEYS", 
+      trial_duration: 230, 
+      data: {
+        task: 'target_sample_practice',
+      }
+    };
+	  
     const target_sample_demo1 = {
       type: jsPsychHtmlKeyboardResponseRaf,
       stimulus: '<div style="position: relative;"><div style="filter: blur(1px);font-size: 24px;">take</div>' + '<div style="filter: blur(3px);font-size: 24px;">take</div></div>' + '<p style="position: absolute; bottom: 10vh; right: 20vh; font-size: 20px; width: 80vw; text-align: center">This is where the two letter strings are showing. You do not need to respond but please press "b" for now to proceed the tutorial.</p>',
@@ -257,7 +270,7 @@
 
     trial2.push(fixation, target_sample, sample)
 
-    practice2.push(fixation, target_sample, sample_practice)
+    practice2.push(fixation, target_sample_practice, sample_practice)
 
 function addAttentionChecks(timeline, attentionCheckTrial) {
       const chunkSize = 24;
